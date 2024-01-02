@@ -1,5 +1,5 @@
 const { StatusCodes } = require('http-status-codes');
-const { NoteRepository } = require('../respositories');
+const { NoteRepository } = require('../repositories');
 const AppError = require('../utils/errors/app-error');
 
 const noteRepo = new NoteRepository();

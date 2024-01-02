@@ -7,10 +7,14 @@ class NoteRepository extends CrudRepository {
     }
 
     async getNoteByTitle(title) {
-        const note = await Note.findOne({
-            title: title,
-        });
-        return note;
+        try {
+            const note = await Note.findOne({
+                title: title,
+            });
+            return note;
+        } catch (error) {
+            throw error;
+        }
     }
 };
 

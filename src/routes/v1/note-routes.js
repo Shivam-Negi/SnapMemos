@@ -12,7 +12,8 @@ router.get('/title/:title', NoteController.getNoteByTitle);
 router.post('/', AuthMiddlewares.validateNote,
                     NoteController.createNote);
 
-router.patch('/:id', NoteController.updateNote);
+router.patch('/:id', AuthMiddlewares.validateNoteEdit, 
+                        NoteController.updateNote);
 
 router.delete('/:id', NoteController.deleteNote);
 
